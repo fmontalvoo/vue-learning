@@ -15,6 +15,11 @@ app.config.errorHandler = (err) => {
     console.error('errorHandler', err)
 }
 
+app.config.globalProperties.variableGlobal = 'Variable Global'
+app.config.globalProperties.reversedList = (value: string) => {
+    return [...value].reverse().join('')
+}
+
 app.use(router)
 
 // Aplicar todas las configuraciones de la aplicación antes de montarla
